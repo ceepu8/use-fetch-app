@@ -26,7 +26,6 @@ export const useFetch = (url, options = {}) => {
     // function: huỷ bỏ một request html nếu cần thiết, tránh việc fetch data khi component đã unmounted
     const controller = new AbortController();
 
-
     const fetchData = async () => {
       const timer = setTimeout(() => controller.abort(), TIMEOUT);
 
@@ -59,9 +58,6 @@ export const useFetch = (url, options = {}) => {
         setLoading(false);
       }
     };
-    console.log(123);
-
-
     fetchData();
 
     // Cleanup function to cancel the fetch if the component is unmounted
